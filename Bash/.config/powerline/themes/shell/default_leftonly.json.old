@@ -14,8 +14,8 @@
 					"function": "mysegments.custom.pwd",
 					"priority": 10,
 					"args" : {
-						"dir_shorten_len" : 50,
-						"dir_limit_depth" : 5
+						"dir_shorten_len" : 100,
+						"dir_limit_depth" : 100
 					}
 				}
 			]

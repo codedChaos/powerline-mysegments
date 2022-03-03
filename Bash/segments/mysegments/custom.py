@@ -46,7 +46,7 @@ class CustomSegment(Segment):
     else:
         return [{
         # is all ok we are cool as f¨*&
-        'contents': "{}".format("😎" if (gitbranch == "")
+        'contents': "{}".format("👌" if (gitbranch == "")
                                 else u'\uE0A0 '+gitbranch),
         'highlight_groups': ['critical:success'],
         }]
@@ -65,7 +65,7 @@ class User(Segment):
     usr = os.popen("whoami").read().rstrip()
 
     return [{
-    'contents': "{} 🦄".format(usr),
+    'contents': "☠️{ {}".format(usr),
     'highlight_groups': ['cool'],
     }]
 
@@ -83,9 +83,9 @@ class Docker(Segment):
     runs = os.popen("docker ps -q | wc -l").read().rstrip()
 
     if int(runs) > 0:
-      ret = "🐳 :: 📦 {} :: ▶ {} ".format(dpsc, runs)
+      ret = "🐳->📦::{}-▶::{} ".format(dpsc, runs)
     else:
-      ret = "🐳 :: 📦 {}".format(dpsc)
+      ret = "🐳->📦::{}".format(dpsc)
 
     return [{
     'contents': ret,
@@ -107,7 +107,7 @@ class Pwd(Segment):
       pwd = "Key Error"
 
     return [{
-    'contents': "👉 {}".format(pwd),
+    'contents': "📂->{}".format(pwd),
     'highlight_groups': ['session'],
     }]
 
@@ -151,7 +151,7 @@ class Git(Segment):
 
     if gitret != '0':
       return [{
-      'contents': "📑 :: {} ".format(gitret),
+      'contents': "☢️::{} ".format(gitret),
       'highlight_groups': ['session'],
       }]
     else:
